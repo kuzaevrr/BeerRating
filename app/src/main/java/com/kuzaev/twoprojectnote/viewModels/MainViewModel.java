@@ -46,7 +46,7 @@ public class MainViewModel extends AndroidViewModel {
             if (beers != null && beers.length > 0) {
                 database.beerDAO().insertBeer(beers[0]);
             }
-            return null;
+            return null; //
         }
     }
 
