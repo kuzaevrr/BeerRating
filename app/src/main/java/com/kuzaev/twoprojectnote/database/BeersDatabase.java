@@ -13,7 +13,7 @@ import com.kuzaev.twoprojectnote.object.Beer;
 public abstract class BeersDatabase extends RoomDatabase {
 
     private static BeersDatabase database;
-    private static final String DB_NAME = "beers2.db";
+    private static final String DB_NAME = "beers.db";
     private static final Object LOCK = new Object();
 
     public static BeersDatabase getInstance(Context context){
