@@ -16,14 +16,14 @@ public abstract class BeersDatabase extends RoomDatabase {
     private static final String DB_NAME = "beers.db";
     private static final Object LOCK = new Object();
 
-    public static BeersDatabase getInstance(Context context){
-        synchronized (LOCK){
-            if(database == null){
+    public static BeersDatabase getInstance(Context context) {
+        synchronized (LOCK) {
+            if (database == null) {
                 database = Room.databaseBuilder(context, BeersDatabase.class, DB_NAME)
                         .build();
             }
         }
-        return  database;
+        return database;
     }
 
     public abstract BeerDAO beerDAO();

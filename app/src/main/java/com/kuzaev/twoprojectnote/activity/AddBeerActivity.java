@@ -31,7 +31,7 @@ public class AddBeerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_beer);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.hide();
         }
         {
@@ -42,7 +42,6 @@ public class AddBeerActivity extends AppCompatActivity {
         }
 
 
-
         List<Integer> integers = new ArrayList<>();
         for (int i = 1; i < 1000; i++) {
             integers.add(i);
@@ -51,18 +50,17 @@ public class AddBeerActivity extends AppCompatActivity {
         spinnerPrice.setAdapter(adapter);
 
         Beer beer;
-        if((beer = beer())!=null){
+        if ((beer = beer()) != null) {
             editText.setText(beer.getTitleBeer());
             int spinnerPosition = adapter.getPosition(beer.getPriceBeer());
             spinnerPrice.setSelection(spinnerPosition);
-            spinnerRating.setSelection(beer.getRatingBeer()-1);
+            spinnerRating.setSelection(beer.getRatingBeer() - 1);
         }
 
     }
 
 
-
-    public Beer beer(){
+    public Beer beer() {
         Beer beer = (Beer) getIntent().getSerializableExtra("beer");
         return beer;
     }
@@ -70,7 +68,7 @@ public class AddBeerActivity extends AppCompatActivity {
     public void addItem(View view) {
         String title = editText.getText().toString().trim();
         int price = spinnerPrice.getSelectedItemPosition() + 1;
-        int rating = spinnerRating.getSelectedItemPosition() +1 ;
+        int rating = spinnerRating.getSelectedItemPosition() + 1;
         mainViewModel.insertBeer(new Beer(title, price, rating));
         finish();
     }

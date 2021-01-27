@@ -27,15 +27,15 @@ public class MainViewModel extends AndroidViewModel {
         return listLiveDataBeers;
     }
 
-    public void deleteBeer(Beer beer){
+    public void deleteBeer(Beer beer) {
         new DeleteTask().execute(beer);
     }
 
-    public void insertBeer(Beer beer){
+    public void insertBeer(Beer beer) {
         new InsertTask().execute(beer);
     }
 
-    public void deleteAllBeer(){
+    public void deleteAllBeer() {
         new DeleteAllTask().execute();
     }
 
@@ -43,27 +43,29 @@ public class MainViewModel extends AndroidViewModel {
 
         @Override
         protected Void doInBackground(Beer... beers) {
-            if(beers != null && beers.length > 0){
+            if (beers != null && beers.length > 0) {
                 database.beerDAO().insertBeer(beers[0]);
             }
             return null;
         }
     }
+
     private static class DeleteTask extends AsyncTask<Beer, Void, Void> {
 
         @Override
         protected Void doInBackground(Beer... beers) {
-            if(beers != null && beers.length > 0){
+            if (beers != null && beers.length > 0) {
                 database.beerDAO().deleteBeer(beers[0]);
             }
             return null;
         }
     }
+
     private static class DeleteAllTask extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... beers) {
-                database.beerDAO().deletedAllBeer();
+            database.beerDAO().deletedAllBeer();
             return null;
         }
     }

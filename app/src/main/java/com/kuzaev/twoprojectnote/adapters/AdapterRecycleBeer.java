@@ -13,7 +13,7 @@ import com.kuzaev.twoprojectnote.object.Beer;
 
 import java.util.List;
 
-public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.BeerViewHolder>{
+public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.BeerViewHolder> {
 
     List<Beer> listBeer;
     private OnBeerClickListener onBeerClickListener;
@@ -26,7 +26,7 @@ public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.
         this.listBeer = listBeer;
     }
 
-    public interface OnBeerClickListener{
+    public interface OnBeerClickListener {
         void onLongClick(int position);
     }
 
@@ -50,7 +50,7 @@ public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.
         return listBeer.size();
     }
 
-    class BeerViewHolder extends RecyclerView.ViewHolder{
+    class BeerViewHolder extends RecyclerView.ViewHolder {
 
         private TextView titleBeer;
         private TextView priceBeer;
@@ -64,7 +64,7 @@ public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    if (onBeerClickListener != null){
+                    if (onBeerClickListener != null) {
                         onBeerClickListener.onLongClick(getAdapterPosition());
                     }
                     return true;
