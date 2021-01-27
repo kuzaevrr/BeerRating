@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Рейтинг пива</string>
+    <string name="name_title_beer">Название</string>
+    <string name="name_price_beer">Цена</string>
+    <string name="name_rating_beer">Рейтинг</string>
+    <string name="hint_edit_text_input_title_beer">Введите название пива</string>
+    <string name="name_text_view_price">Выберите цену пива!</string>
+    <string name="name_text_view_rating">Выберите рейтинг пива</string>
+    <string name="name_input_item_beer">Добавить</string>
+    <string-array name="array_rating">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+</resources>
