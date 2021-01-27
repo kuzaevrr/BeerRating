@@ -41,7 +41,7 @@ public class AdapterRecycleBeer extends RecyclerView.Adapter<AdapterRecycleBeer.
     public void onBindViewHolder(@NonNull BeerViewHolder holder, int position) {
         Beer beer = listBeer.get(position);
         holder.titleBeer.setText(beer.getTitleBeer());
-        holder.priceBeer.setText(String.format("%s, руб.", beer.getPriceBeer()));
+        holder.priceBeer.setText(String.format("%s руб.", beer.getPriceBeer()));
         holder.ratingBeer.setText(String.valueOf(beer.getRatingBeer()));
     }
 
